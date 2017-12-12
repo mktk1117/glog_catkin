@@ -16,6 +16,9 @@ ExternalProject_Add(glog_src
   CONFIGURE_COMMAND cd ../glog_src/ && ./configure --with-pic
     --with-gflags=${gflags_catkin_PREFIX}
     --prefix=${CATKIN_DEVEL_PREFIX}
+    --host=arm-linux
+    CC=arm-linux-gnueabihf-gcc
+    CXX=arm-linux-gnueabihf-g++
   BUILD_COMMAND cd ../glog_src/ && make -j 8
   INSTALL_COMMAND cd ../glog_src/ && make install -j 8
 )
